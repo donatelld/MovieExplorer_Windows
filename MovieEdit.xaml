@@ -1,0 +1,46 @@
+﻿<Window x:Class="MovieExplorer.MovieEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MovieExplorer"
+        mc:Ignorable="d"
+        Title="Movie Edit" Height="300" Width="500" Loaded="Window_Loaded" Icon="images/movie.png" ResizeMode="NoResize" Closed="Window_Closed">
+    <Grid>
+        <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5">
+            <Image x:Name="moviePhoto" Width="200" Height="285" Source="{Binding Path=AbsolutePhoto}"></Image>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="36" />
+                    <RowDefinition Height="36" />
+                    <RowDefinition Height="36" />
+                    <RowDefinition Height="36" />
+                    <RowDefinition Height="36" />
+                    <RowDefinition Height="36" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Label Content="电影名称:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"></Label>
+                <TextBox Text="{Binding Path=Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" Grid.Column="1" Width="180" Margin="5" VerticalContentAlignment="Center" HorizontalAlignment="Center" KeyDown="TextBox_KeyDown"/>
+                <Label Content="原标题:" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"></Label>
+                <TextBox Text="{Binding Path=OriginalTitle}" Grid.Row="1" Grid.Column="1" Width="180" Margin="5" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="年代:" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"></Label>
+                <TextBox Text="{Binding Path=Year}" Grid.Row="2" Grid.Column="1" Width="180" Margin="5" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="分辨率:" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"></Label>
+                <TextBox Text="{Binding Path=Resolution}" Grid.Row="3" Grid.Column="1" Width="180" Margin="5" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="评价:" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"></Label>
+                <TextBox Text="{Binding Path=Rating}" Grid.Row="4" Grid.Column="1" Width="180" Margin="5" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
+                <Label Content="文件名:" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"></Label>
+                <TextBox Text="{Binding Path=FileName}" Grid.Row="5" Grid.Column="1" Width="180" Margin="5" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
+                <WrapPanel x:Name="chooseMoviePanel" Grid.Row="6" Grid.Column="1" Visibility="Hidden">
+                    <Button x:Name="preBtn" Width="50" HorizontalAlignment="Left" Margin="5" Click="preBtn_Click">上一个</Button>
+                    <Button x:Name="nextBtn" Width="50" HorizontalAlignment="Center" Margin="5" Click="nextBtn_Click">下一个</Button>
+                    <Label x:Name="pageLabel" Content="" HorizontalAlignment="Right" Margin="0,2,0,0"></Label>
+                </WrapPanel>
+            </Grid>
+        </WrapPanel>
+    </Grid>
+</Window>

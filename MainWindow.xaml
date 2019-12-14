@@ -1,0 +1,32 @@
+﻿<Window x:Class="MovieExplorer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MovieExplorer"
+        mc:Ignorable="d"
+        Title="Movie Explorer"  Loaded="Window_Loaded" WindowStyle="None" WindowStartupLocation="Manual"
+        AllowsTransparency="True" Icon="images/movie.png" KeyDown="Window_KeyDown">
+    <Grid Margin="5" Focusable="False">
+        <Grid.Background>
+            <ImageBrush ImageSource="images/541f9b51273a4.jpg"></ImageBrush>
+        </Grid.Background>
+        <WrapPanel VerticalAlignment="Top" HorizontalAlignment="Right" Margin="5">
+            <TextBox x:Name="searchText" Width="200" Height="30" Margin="3,3,10,3" Background="Transparent"  Foreground="White" BorderThickness="1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Visibility="Hidden"></TextBox>
+            <Image x:Name="settingBtn" Source="images/setting.png" Width="16" Margin="3,3,10,3" MouseEnter="Setting_MouseEnter" MouseLeave="Setting_MouseLeave" MouseLeftButtonDown="Setting_MouseLeftButtonDown"></Image>
+            <Image x:Name="minimize" Source="images/minimize.png" Width="16" Margin="3,3,10,3" MouseEnter="Setting_MouseEnter" MouseLeave="Setting_MouseLeave" MouseLeftButtonDown="Setting_MouseLeftButtonDown"></Image>
+            <Image x:Name="close" Source="images/close.png" Width="16" Margin="3,3,3,3" MouseLeftButtonDown="Setting_MouseLeftButtonDown" MouseEnter="Setting_MouseEnter" MouseLeave="Setting_MouseLeave"></Image>
+
+        </WrapPanel>
+        <ScrollViewer x:Name="scrollBar" Focusable="False" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled" Margin="0,40,0,0">
+            <ScrollViewer.Content>
+                <WrapPanel x:Name="moviePanel" HorizontalAlignment="Center" VerticalAlignment="Center" Focusable="False">
+                    
+                    
+                </WrapPanel>
+            </ScrollViewer.Content>
+        </ScrollViewer>
+        <Label Content="Movie Explorer" FontSize="18px" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.152,0.243" Margin="10,0,0,0"/>
+
+    </Grid>
+</Window>
