@@ -315,7 +315,6 @@ namespace MovieExplorer
             response.Send(header_to_bytes);  //发送应答头
             response.Send(new byte[] { (byte)'\r', (byte)'\n' });  //发送空行
             response.Send(content_to_bytes);  //发送正文（html）
-
             response.Close();
 
         }
